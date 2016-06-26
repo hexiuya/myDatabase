@@ -37,6 +37,10 @@ tTraderBase* tTraderBase::tObject(std::string url, std::string usr, std::string 
 {
 	if (tTraderBase::m_pInstance != NULL)
 	{
+		return tTraderBase::m_pInstance;
+	}
+	else
+	{
 		tTraderBase::m_pInstance = new tTraderBase();
 		tTraderBase::isonDB =  new tMyDataBase();
 		tTraderBase::isonDB->OpenDB(url, usr, passwd, database);
@@ -54,6 +58,11 @@ void tTraderBase::tByeBye(void)
 		tTraderBase::isonDB = NULL;
 	}
 
+}
+
+void tTraderBase::operator<<(std::string str)
+{
+	tTraderBase::isonDB->DBExec(str);
 }
 
 /*

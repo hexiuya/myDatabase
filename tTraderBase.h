@@ -29,6 +29,9 @@ namespace LRS
 		static tTraderBase* tObject(std::string url, std::string usr, std::string passwd, std::string database);
 		static void tByeBye(void);
 
+		void operator<<(std::string str);
+			
+
 		// those are the parameters i need to check
 		//tTraderMeter		tdr_m;			// trader parameters
 		//tTraderUnitMeter	tdru_m;			// traderUnit parameters
