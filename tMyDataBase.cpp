@@ -1,15 +1,16 @@
 #include "tMyDataBase.h"
-#include <iostream>
-#include <string>
-#include <windows.h>
-#include <time.h>
-#include <sys/timeb.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdexcept>
+
+#include <cppconn/exception.h>
+
 #define DB_LOG "../DataBase/"
 #define M_VERBOSE			4
 #define	M_INFO_LEVEL		2
 
 
-int tMyDataBase::tCount = 0;
+//int tMyDataBase::tCount = 0;
 
 tMyDataBase::tMyDataBase()
 {
@@ -23,11 +24,11 @@ tMyDataBase::tMyDataBase()
 
 	char logname[128];
 	memset(logname, 0, sizeof(logname));
-	sprintf_s(logname, "%s%d%s_my.txt", DB_LOG, tCount, this->name.c_str());
+//	sprintf_s(logname, "%s%d%s_my.txt", DB_LOG, tCount, this->name.c_str());
 	this->tlogF = fopen(logname, "w");
 
-	tCount++;
-	tMyDataBase::tRecord::pVerbose(this->tlogF, M_INFO_LEVEL, "\n[SUCCESS]{DataBase}[CREATE]\t(%s)", this->name.c_str());
+//	tCount++;
+//	tMyDataBase::tRecord::pVerbose(this->tlogF, M_INFO_LEVEL, "\n[SUCCESS]{DataBase}[CREATE]\t(%s)", this->name.c_str());
 }
 
 tMyDataBase::~tMyDataBase()
@@ -65,7 +66,8 @@ int tMyDataBase::DBExec(std::string sql)
 	}
 	catch (sql::SQLException &e)
 	{
-		tMyDataBase::tRecord::pVerbose(stdout, M_INFO_LEVEL, "Erro:%s(%i)[%s](#E:%i)[#S:%s]{%s}", __FILE__, __LINE__, __FUNCTION__, e.getErrorCode(), e.getSQLState().c_str(), e.what());
+	//	std::cout<<"error"<<std::endl;
+//		tMyDataBase::tRecord::pVerbose(stdout, M_INFO_LEVEL, "Erro:%s(%i)[%s](#E:%i)[#S:%s]{%s}", __FILE__, __LINE__, __FUNCTION__, e.getErrorCode(), e.getSQLState().c_str(), e.what());
 	}
 	// adding exception
 	return 0;
@@ -78,12 +80,13 @@ int tMyDataBase::DBExecQuary(std::string sql)
 	}
 	catch (sql::SQLException &e)
 	{
-		tMyDataBase::tRecord::pVerbose(stdout, M_INFO_LEVEL, "Erro:%s(%i)[%s](#E:%i)[#S:%s]{%s}", __FILE__, __LINE__, __FUNCTION__, e.getErrorCode(), e.getSQLState().c_str(), e.what());
+	//	tMyDataBase::tRecord::pVerbose(stdout, M_INFO_LEVEL, "Erro:%s(%i)[%s](#E:%i)[#S:%s]{%s}", __FILE__, __LINE__, __FUNCTION__, e.getErrorCode(), e.getSQLState().c_str(), e.what());
 	}
 	// adding exception
 	return 0;
 }
 
+/*
 int tMyDataBase::GetResInt(int i)
 {
 	int retcode = -1;
@@ -224,3 +227,4 @@ void tMyDataBase::tRecord::pVerbose(FILE* stream, int vb, const char* format, ..
 	vfprintf(stream, format, args);
 	va_end(args);
 }
+*/

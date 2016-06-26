@@ -5,9 +5,9 @@ using namespace LRS;
 #define LRS_TRADERUNITID	100
 #define LRS_TRADERINCODE	1153202979584158078
 
-std::uint32_t tTraderBase::traderId = LRS_TRADERID;
-std::uint32_t tTraderBase::tradeUnitId = LRS_TRADERUNITID;
-std::uint64_t tTraderBase::innerCode = LRS_TRADERINCODE;
+//std::uint32_t tTraderBase::traderId = LRS_TRADERID;
+//std::uint32_t tTraderBase::tradeUnitId = LRS_TRADERUNITID;
+//std::uint64_t tTraderBase::innerCode = LRS_TRADERINCODE;
 tTraderBase* tTraderBase::m_pInstance = NULL;
 tMyDataBase* tTraderBase::isonDB = NULL;		
 
@@ -56,18 +56,19 @@ void tTraderBase::tByeBye(void)
 
 }
 
+/*
 void tTraderBase::tTakeSnap(void)
 {
 //	void tstrader(int id);
-	this->SnapBase.tGet_tstrader(tTraderBase::traderId, this->isonDB);
-	this->SnapBase.tGet_tstrader_sa(tTraderBase::traderId, tTraderBase::innerCode, this->isonDB);
+//	this->SnapBase.tGet_tstrader(tTraderBase::traderId, this->isonDB);
+//	this->SnapBase.tGet_tstrader_sa(tTraderBase::traderId, tTraderBase::innerCode, this->isonDB);
 	//this->SnapBase.tPrint_tstrader();
 
 }
 
 tDBSnap& tTraderBase::tGetSnapDB(void)
 {
-	return this->SnapBase;
+//	return this->SnapBase;
 }
 
 void tTraderBase::tResetOMS(void)
@@ -82,7 +83,7 @@ void tTraderBase::tResetISONDB(void)
 	return;
 }
 
-
+*/
 #undef LRS_TRADERID
 #undef LRS_TRADERUNITID
 
