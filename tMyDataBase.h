@@ -38,9 +38,9 @@ public:
 	int DBExec(std::string sql);
 	int DBExecQuary(std::string sql);
 	
-/*
 	int GetResInt(int i);
 	int GetResInt(std::string str);
+
 	double GetResDouble(int i);
 	double GetResDouble(std::string str);
 
@@ -49,6 +49,7 @@ public:
 
 	bool GetNext(void);
 
+/*
 	static int tCount;	// the number of databases created 
 */
 

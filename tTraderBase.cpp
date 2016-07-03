@@ -65,6 +65,16 @@ void tTraderBase::operator<<(std::string str)
 	tTraderBase::isonDB->DBExec(str);
 }
 
+void tTraderBase::operator>>(std::string str)
+{
+	tTraderBase::isonDB->DBExecQuary(str);
+}
+
+tMyDataBase* tTraderBase::tGetDB(void)
+{
+	return tTraderBase::isonDB;
+}
+
 /*
 void tTraderBase::tTakeSnap(void)
 {

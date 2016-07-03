@@ -77,6 +77,7 @@ int tMyDataBase::DBExecQuary(std::string sql)
 {
 	try{
 		this->res = this->stmt->executeQuery(sql::SQLString(sql));
+	//	printf();
 	}
 	catch (sql::SQLException &e)
 	{
@@ -86,7 +87,6 @@ int tMyDataBase::DBExecQuary(std::string sql)
 	return 0;
 }
 
-/*
 int tMyDataBase::GetResInt(int i)
 {
 	int retcode = -1;
@@ -103,7 +103,7 @@ int tMyDataBase::GetResInt(int i)
 	}
 	catch (sql::SQLException &e)
 	{
-		tMyDataBase::tRecord::pVerbose(stdout, M_INFO_LEVEL, "Erro:%s(%i)[%s](#E:%i)[#S:%s]{%s}", __FILE__, __LINE__, __FUNCTION__, e.getErrorCode(), e.getSQLState().c_str(), e.what());
+//		tMyDataBase::tRecord::pVerbose(stdout, M_INFO_LEVEL, "Erro:%s(%i)[%s](#E:%i)[#S:%s]{%s}", __FILE__, __LINE__, __FUNCTION__, e.getErrorCode(), e.getSQLState().c_str(), e.what());
 		return retcode;// and then report errors
 	}
 }
@@ -124,7 +124,7 @@ int tMyDataBase::GetResInt(std::string str)
 	}
 	catch (sql::SQLException &e)
 	{
-		tMyDataBase::tRecord::pVerbose(stdout, M_INFO_LEVEL, "Erro:%s(%i)[%s](#E:%i)[#S:%s]{%s}", __FILE__, __LINE__, __FUNCTION__, e.getErrorCode(), e.getSQLState().c_str(), e.what());
+//		tMyDataBase::tRecord::pVerbose(stdout, M_INFO_LEVEL, "Erro:%s(%i)[%s](#E:%i)[#S:%s]{%s}", __FILE__, __LINE__, __FUNCTION__, e.getErrorCode(), e.getSQLState().c_str(), e.what());
 		return retcode;// and then report errors
 	}
 }
@@ -145,7 +145,7 @@ double tMyDataBase::GetResDouble(int i)
 	}
 	catch (sql::SQLException &e)
 	{
-		tMyDataBase::tRecord::pVerbose(stdout, M_INFO_LEVEL, "Erro:%s(%i)[%s](#E:%i)[#S:%s]{%s}", __FILE__, __LINE__, __FUNCTION__, e.getErrorCode(), e.getSQLState().c_str(), e.what());
+//		tMyDataBase::tRecord::pVerbose(stdout, M_INFO_LEVEL, "Erro:%s(%i)[%s](#E:%i)[#S:%s]{%s}", __FILE__, __LINE__, __FUNCTION__, e.getErrorCode(), e.getSQLState().c_str(), e.what());
 		return retcode;// and then report errors
 	}
 }
@@ -166,7 +166,7 @@ double tMyDataBase::GetResDouble(std::string str)
 	}
 	catch (sql::SQLException &e)
 	{
-		tMyDataBase::tRecord::pVerbose(stdout, M_INFO_LEVEL, "Erro:%s(%i)[%s](#E:%i)[#S:%s]{%s}", __FILE__, __LINE__, __FUNCTION__, e.getErrorCode(), e.getSQLState().c_str(), e.what());
+//		tMyDataBase::tRecord::pVerbose(stdout, M_INFO_LEVEL, "Erro:%s(%i)[%s](#E:%i)[#S:%s]{%s}", __FILE__, __LINE__, __FUNCTION__, e.getErrorCode(), e.getSQLState().c_str(), e.what());
 		return retcode;// and then report errors
 	}
 }
@@ -187,7 +187,7 @@ std::string tMyDataBase::GetResStr(int i)
 	}
 	catch (sql::SQLException &e)
 	{
-		tMyDataBase::tRecord::pVerbose(stdout, M_INFO_LEVEL, "Erro:%s(%i)[%s](#E:%i)[#S:%s]{%s}", __FILE__, __LINE__, __FUNCTION__, e.getErrorCode(), e.getSQLState().c_str(), e.what());
+//		tMyDataBase::tRecord::pVerbose(stdout, M_INFO_LEVEL, "Erro:%s(%i)[%s](#E:%i)[#S:%s]{%s}", __FILE__, __LINE__, __FUNCTION__, e.getErrorCode(), e.getSQLState().c_str(), e.what());
 		return retcode;// and then report errors
 	}
 }
@@ -208,7 +208,7 @@ std::string tMyDataBase::GetResStr(std::string str)
 	}
 	catch (sql::SQLException &e)
 	{
-		tMyDataBase::tRecord::pVerbose(stdout, M_INFO_LEVEL, "Erro:%s(%i)[%s](#E:%i)[#S:%s]{%s}", __FILE__, __LINE__, __FUNCTION__, e.getErrorCode(), e.getSQLState().c_str(), e.what());
+//		tMyDataBase::tRecord::pVerbose(stdout, M_INFO_LEVEL, "Erro:%s(%i)[%s](#E:%i)[#S:%s]{%s}", __FILE__, __LINE__, __FUNCTION__, e.getErrorCode(), e.getSQLState().c_str(), e.what());
 		return retcode;// and then report errors
 	}
 }
@@ -218,6 +218,7 @@ bool tMyDataBase::GetNext(void)
 	return this->res->next();
 }
 
+/*
 void tMyDataBase::tRecord::pVerbose(FILE* stream, int vb, const char* format, ...)
 {
 	if (vb > M_VERBOSE)

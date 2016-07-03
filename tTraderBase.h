@@ -30,6 +30,7 @@ namespace LRS
 		static void tByeBye(void);
 
 		void operator<<(std::string str);
+		void operator>>(std::string str);
 			
 
 		// those are the parameters i need to check
@@ -46,7 +47,8 @@ namespace LRS
 		// Reset ISONDB to be Zero State
 		//void tResetISONDB(void);
 
-	
+		tMyDataBase* tGetDB(void);
+			
 	protected:
 
 		double		SnapTime;	// will implement in the future
